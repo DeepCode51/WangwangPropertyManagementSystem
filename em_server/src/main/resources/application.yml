@@ -1,0 +1,72 @@
+
+# 配置腾讯短信SDK
+
+#sms:
+#  appurl: "sms.tencentcloudapi.com"
+#  SDKAppID : "SDKAppID"
+#  secretId : "secretId"
+#  secretKey : "secretKey"
+#  SDKAppKey : "SDKAppKey"
+#  SMS_SIGN : "学习使我快乐"
+
+
+
+spring:
+   # 配置定时任务持久化
+
+#   quartz:
+#        jdbc:
+#          # 初始化Quartz表结构,项目第一次启动配置程always,然后改成never 否则已生成的job会被初始化掉
+#          initialize-schema: never
+#        #   作业存储类型
+#        job-store-type: jdbc
+#        #   调度程序的名称
+#        scheduler-name: hrCleanScheduler
+#        properties:
+#          org:
+#            quartz:
+#              scheduler:
+#                instanceName: etlCleanScheduler
+#                instanceId: AUTO
+#              jobStore:
+#                #数据保存方式为持久化
+#                class: org.quartz.impl.jdbcjobstore.JobStoreTX
+#                driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+#                #Quartz表前缀
+#                tablePrefix: QRTZ_
+#                #是否加入集群
+#                isClustered: false
+#                clusterCheckinInterval: 10000
+#                useProperties: false
+#                #调度器线程池配置
+#              threadPool:
+#                class: org.quartz.simpl.SimpleThreadPool
+#                #线程数
+#                threadCount: 20
+#                #线程优先级
+#                threadPriority: 5
+#                threadsInheritContextClassLoaderOfInitializingThread: true
+   # 配置邮件服务
+
+#   mail:
+#     host: smtp.qq.com
+#     port: 465
+#     username: 481326635@qq.com
+#     password: "你的发信秘钥"
+#     protocol: smtps
+
+
+
+
+
+#设置Session过期时间
+server:
+  servlet:
+    session:
+      timeout: 1D
+
+
+#MybatisPlus开启日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
